@@ -27,7 +27,7 @@ function shortenUrl() {
     
     /* Create Div Element */
     const linkElement = document.createElement('div');
-    linkElement.className = 'd-flex align-items-center justify-content-center pb-2';
+    linkElement.className = 'd-flex align-items-center justify-content-center pb-2 small-device';
     /* Add Recent shortened URL's that redirect to Long link, and add Delete Icon that has a onClick Event */
     linkElement.innerHTML = `
       <a href="#" class="me-4" data-shortpath="${shortPath}" onclick="redirectToLongUrl.call(this)">${shortUrl}</a>

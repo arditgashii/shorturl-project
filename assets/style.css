@@ -17,8 +17,11 @@ body {
   font-weight: bold;
 }
 
+p{
+    font-size: 5vw;
+}
+
 .url-title{
-  font-size: 4em; 
   font-family: typographicaFont;
 }
 
@@ -29,8 +32,6 @@ body {
 
 /* Button CSS */
 button {
-    width: 35%;
-    padding: 10px 30px;
     border: 0;
     background-color: #57c513;
     color: #ffffff;
@@ -52,10 +53,6 @@ input, #expiration {
     border-radius: 5px;
     color: white;
     font-weight: 600;
-}
-  
-#longUrl{
-    width: 80%;
 }
 
 input:focus {
@@ -83,4 +80,30 @@ input:focus {
     font-size: 1.5em !important;
     color:red;
     cursor: pointer; 
+}
+
+img {
+    width: 40px;
+}
+
+/* Responsive CSS */
+/* Small devices */
+@media screen and (max-width: 576px) {
+    .small-device, #expiration { 
+        max-width: 80%;
+        font-size: 10px;
+     }
+     input, #expiration{
+        height: 5vh;
+     }
+     img {
+        width: 30px;
+     }
+}
+
+/* Large devices */
+@media screen and (max-width: 992px) {
+    .max-height{
+        max-height: 75%;
+    }    
 }
