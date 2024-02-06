@@ -10,25 +10,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <div class="container-fluid h-100">
+    <div class="container-fluid h-100 max-height">
         <div class="row h-100 d-flex align-items-center">
             <!-- Recent Shortened URL's -->
-            <div class="col-lg-4 col-md-12 d-block flex-column align-items-center mb-5">
+            <div class="col-lg-4 mb-5 order-lg-1 order-2 small-device">
                 <div id="result">
                     <h1 class="recent-title text-center">Recent Shortened URL's</h1>
                     <div id="recentUrls" class="d-flex flex-column w-100 text-center"></div>
                 </div>
             </div>
             <!-- URL Shortener -->
-            <div class="col-lg-8 col-md-12 d-flex flex-column align-items-center">
-                <h1 class="url-title w-50 me-5 pb-2">URL Shortener</h1>
-                <div class="container">
+            <div class="col-lg-8 d-flex flex-column align-items-center order-lg-2 order-1">
+                <div class="col-6 text-lg-start text-center">
+                    <p class="url-title ms-lg-4 pb-2">URL Shortener</p>
+                </div>
+                
+                <div class="container small-device">
                     <div class="row">
-                        <div class="col-lg-8 d-flex justify-content-end">
-                            <input type="text" id="longUrl" class="text-center mb-2" placeholder="Paste URL to shorten">
+                        <div class="col-lg-8 d-flex justify-content-center justify-content-lg-end">
+                            <input type="text" id="longUrl" class="text-center w-75 mb-2" placeholder="Paste URL to shorten">
                         </div>
-                        <div class="col-lg-4 d-flex justify-content-start">
-                            <select class="form-select text-center px-4 w-50" id="expiration" required>
+                        <div class="col-lg-4 d-flex justify-content-center justify-content-lg-start">
+                            <select class="form-select text-center px-4 w-75" id="expiration" required>
                                 <option value="" selected="true" disabled="disabled">Exp. time</option>
                                 <option value="1">1 minute</option>
                                 <option value="5">5 minutes</option>
@@ -38,14 +41,21 @@
                                 <option value="300">5 hours</option>
                             </select>
                         </div>
+                        <!-- Button to short URL and link to redirect to long URL -->
+                        <div class="col-lg-10 text-center">
+                            <button type="button" class="shorten-btn mt-3 px-4 py-2" onclick="shortenUrl()">Shorten URL</button>
+                            <p style="display: none;"><span id="shortUrl" onclick="redirectToLongUrl()"></span></p>
+                        </div>
                     </div>
                 </div>
-                <!-- Button to short URL and link to redirect to long URL -->
-                <div class="w-50">
-                    <button type="button" class="shorten-btn mt-3 ms-5" onclick="shortenUrl()">Shorten URL</button>
-                    <p style="display: none;"><span id="shortUrl" onclick="redirectToLongUrl()"></span></p>
-                </div>
             </div>
+        </div>
+
+        <!-- Project image and link in GitHub -->
+        <div class="fixed-bottom text-center mb-4">
+            <a href="https://github.com/arditgashii/shorturl-project" target=”_blank”>
+                <img src="./assets/github.png" alt="">
+            </a>
         </div>
     </div>
 
